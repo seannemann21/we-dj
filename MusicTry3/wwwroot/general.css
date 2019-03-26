@@ -1,0 +1,31 @@
+﻿.glyph {
+    text-align: center;
+    width: 100%;
+}
+
+
+.btn {
+    background-color: #a5aa9e;
+    border-color: #a5aa9e;
+    color: white;
+}
+
+.main-color {
+    color: #a5aa9e;
+}
+
+.btn:focus,.form-control:focus {
+    border-color: #a5aa9e;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #a5aa9e;
+}
+
+.icon-button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
