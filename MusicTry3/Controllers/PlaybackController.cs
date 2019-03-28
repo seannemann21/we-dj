@@ -9,7 +9,7 @@ using MusicTry3.Util;
 
 namespace MusicTry3.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/session/{sessionId}/playlist/{playlistId}/")]
     [ApiController]
     public class PlaybackController : ControllerBase
     {
