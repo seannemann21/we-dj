@@ -13,7 +13,7 @@ namespace MusicTry3.Models
     public class SpotifyPlayer : IPlayer
     {
 
-        private static readonly ILog logger = LogManager.GetLogger("SpotifyApp", "Playlist");
+        private static readonly ILog logger = log4net.LogManager.GetLogger(typeof(SpotifyPlayer));
         public List<IPlaylist> playlists { get; set; }
         public IPlaylist currentPlaylist { get; set; }
         [JsonIgnore]
