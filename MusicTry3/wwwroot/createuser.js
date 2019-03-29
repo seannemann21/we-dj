@@ -25,17 +25,19 @@
 
     $('#submitUserForm').submit(function (e) {
         e.preventDefault();
-        $.ajax({
-            url: '/api/session/createuser?username=' + $("#username").val() + '&sessionId=' + sessionId,
-            type: 'put',
-            success: function (data) {
-                window.sessionStorage.setItem("username", $("#username").val());
-                window.location.assign("/session.html");
-            },
-            error: function (e) {
-                $("#userError").show();
-            }
-        });
+        if (sessionId) {
+            $.ajax({
+                url: '/api/session/createuser?username=' + $("#username").val() + '&sessionId=' + sessionId,
+                type: 'put',
+                success: function (data) {
+                    window.sessionStorage.setItem("username", $("#username").val());
+                    window.location.assign("/session.html");
+                },
+                error: function (e) {
+                    $("#userError").show();
+                }
+            });
+        }
     });
 });
 
