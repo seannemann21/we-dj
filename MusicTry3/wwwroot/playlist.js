@@ -103,11 +103,11 @@ $(document).ready(function () {
             var trackName = artistAndName[0];
             var trackArtist = artistAndName[1];
             var trackUri = ui.item.value;
+            ui.item.value = "";
             $.ajax({
                 url: '/api/session/' + sessionId + '/playlist/' + playlistId + '/add?trackUri=' + trackUri + '&name=' + trackName + '&artist=' + trackArtist + '&submitter=' + username,
                 type: 'put',
                 success: function (tracks) {
-                    $("#search").val('');
                     UpdatePlaylistData(sessionId, playlistId, username);
                 }
             })
