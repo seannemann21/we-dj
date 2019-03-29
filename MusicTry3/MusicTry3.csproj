@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="log4net.config" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="log4net.config" />
     <None Include="wwwroot\createuser.html" />
     <None Include="wwwroot\createuser.js" />
