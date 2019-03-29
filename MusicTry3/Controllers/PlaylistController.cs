@@ -72,7 +72,7 @@ namespace MusicTry3.Controllers
                 }
             }
 
-            return trackAdded ? (IActionResult)Ok() : NotFound();
+            return trackAdded ? (IActionResult)Ok() : BadRequest();
         }
 
         [HttpPut("{id}/update")]
