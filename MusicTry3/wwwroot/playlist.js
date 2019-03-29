@@ -18,6 +18,7 @@ $(document).ready(function () {
     if (userstatus !== "master") {
         $("#play").hide();
         $("#progressBarDiv").hide();
+        $("#playback").hide();
     }
 
     $("#next").hide();
@@ -374,7 +375,7 @@ function exitSession() {
     window.sessionStorage.removeItem("sessionId");
     window.sessionStorage.removeItem("keep-alive");
     window.sessionStorage.removeItem("authentication-token");
-    window.location.assign("/home");
+    window.location.assign("/");
 }
 
 
