@@ -32,10 +32,6 @@ $(document).ready(function () {
     $('#newRoom').click(function (e) {
         window.location.assign("https://accounts.spotify.com/authorize/?response_type=code&client_id=fffa7e259c734e9d9b681b1fbf07f2f9&scope=user-read-playback-state%20streaming%20user-read-birthdate%20user-read-email%20user-read-private%20playlist-modify-public%20user-modify-playback-state&redirect_uri=" + REDIRECT_URI);
     });
-
-    $('#spotifyLogin').click(function (e) {
-
-    });
 });
 
 function GetURLParameter(sParam) {
