@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="log4net.config" />
+    <Content Include="log4net.config" />
   </ItemGroup>
 
   <ItemGroup>
