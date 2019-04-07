@@ -3,7 +3,8 @@ var deviceID = null;
 var lastSession = null;
 var endOfSongPauses = 0;
 
-$(document).ready(function () {
+// need to wait for javascript to load before running
+$(window).on("load", function () {
     
     var authenticationToken = window.sessionStorage.getItem("authenticationToken");
     var sessionId = window.sessionStorage.getItem("sessionId");
@@ -52,7 +53,7 @@ $(document).ready(function () {
     UpdateSessionData(sessionId, username);
     setInterval(function () {
         UpdateSessionData(sessionId, username);
-    }, 1000);
+    }, 10000);
 
     setInterval(function () {
         UpdateProgressBar();
@@ -61,7 +62,7 @@ $(document).ready(function () {
     UpdatePlaylistData(sessionId, playlistId, username);
     setInterval(function () {
         UpdatePlaylistData(sessionId, playlistId, username);
-    }, 5000);
+    }, 10000);
 
     $('#play').click(function (e) {
         e.preventDefault();

@@ -3,7 +3,7 @@ $.get("api/session/redirect-uri", function (data) {
     REDIRECT_URI = data;
 });
 
-$(document).ready(function () {
+$(window).on("load", function () {
     if (window.sessionStorage.getItem("sessionId") != null && window.sessionStorage.getItem("userstatus") != null && window.sessionStorage.getItem("username") != null) {
         window.location.assign("/session.html");
     } else {

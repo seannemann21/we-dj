@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+﻿$(window).on("load", function () {
     var sessionId = window.sessionStorage.getItem("sessionId");
     var username = window.sessionStorage.getItem("username");
     var userstatus = window.sessionStorage.getItem("userstatus");
