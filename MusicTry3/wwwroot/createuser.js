@@ -1,4 +1,4 @@
-﻿$(window).on("load", function () {
+﻿$(document).ready(function () {
     if (window.sessionStorage.getItem("sessionId") != null && window.sessionStorage.getItem("userstatus") != null && window.sessionStorage.getItem("username") != null) {
         window.location.assign("/session.html");
     }
