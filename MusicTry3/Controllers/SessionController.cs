@@ -77,7 +77,7 @@ namespace MusicTry3.Controllers
             {
                 keepAliveUpdated = session.UpdateKeepAlive(keepAlive);
             }
-            return keepAliveUpdated ? (IActionResult)Ok() : NotFound();
+            return keepAliveUpdated ? (IActionResult)Ok("Ok") : NotFound();
         }
 
         [Route("createuser")]
