@@ -14,6 +14,10 @@ $(window).on("load", function () {
 
     if (authenticationToken != null) {
         setupSpotifyPlayback(authenticationToken, sessionId, playlistId);
+        setTimeout(function () {
+            NextSongPlayback(sessionId, playlistId);
+            PausePlayback(sessionId, playlistId);
+        }, 1000);
     }
 
     if (userstatus !== "master") {
@@ -259,27 +263,31 @@ function createStars(sessionId, playlistId, name, onboardingSong, rating) {
         for (i = 0; i < 5; i++) {
             var star = $('<span />').addClass('fa');
             star.addClass('fa-star');
-            star.addClass(i.toString());
-            if (i <= rating) {
-                star.addClass('checked');
-            }
-            star.click(function () {
-                for (i = 0; i < 5; i++) {
-                    stars[i].removeClass('checked');
+            if (onboardingSong.priority) {
+                star.addClass('priority-checked');
+            } else {
+                star.addClass(i.toString());
+                if (i <= rating) {
+                    star.addClass('checked');
                 }
-                for (i = 0; i < 5; i++) {
-                    stars[i].addClass('checked');
-                    if ($(this).hasClass(i)) {
-                        $.ajax({
-                            url: '/api/session/' + sessionId + '/playlist/' + playlistId + '/update?trackUri=' + onboardingSong.song.trackUri + '&rating=' + i + '&username=' + name,
-                            type: 'put',
-                            success: function () {
-                            }
-                        })
-                        break;
+                star.click(function () {
+                    for (i = 0; i < 5; i++) {
+                        stars[i].removeClass('checked');
                     }
-                }
-            });
+                    for (i = 0; i < 5; i++) {
+                        stars[i].addClass('checked');
+                        if ($(this).hasClass(i)) {
+                            $.ajax({
+                                url: '/api/session/' + sessionId + '/playlist/' + playlistId + '/update?trackUri=' + onboardingSong.song.trackUri + '&rating=' + i + '&username=' + name,
+                                type: 'put',
+                                success: function () {
+                                }
+                            })
+                            break;
+                        }
+                    }
+                });
+            }
             stars.push(star);
     }
 
