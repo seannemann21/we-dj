@@ -104,7 +104,10 @@ namespace MusicTry3.Models
             {
                 bool priority = submitter.readyForFreePick;
                 trackAdded = player.AddToOnboardingSongs(playlistId, new OnBoardingSong(artist, name, trackUri, priority, submitter));
-                submitter.readyForFreePick = false;
+                if(priority)
+                {
+                    submitter.freePickTaken();
+                }
             }
 
             return trackAdded;

@@ -27,9 +27,14 @@ namespace MusicTry3.Models
             songsUntilFreePick--;
             if(songsUntilFreePick == 0)
             {
-                songsUntilFreePick = SONGS_NEEDED_FOR_FREE_PICK;
                 readyForFreePick = true;
             }
+        }
+
+        public void freePickTaken()
+        {
+            songsUntilFreePick = SONGS_NEEDED_FOR_FREE_PICK;
+            readyForFreePick = false;
         }
     }
 }
